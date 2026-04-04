@@ -1,0 +1,10 @@
+/* App specific layout styles beyond global index.css */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
