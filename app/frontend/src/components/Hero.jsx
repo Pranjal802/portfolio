@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import { MY_DATA } from '../data/mock';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-import { Code2, ArrowDown } from 'lucide-react';
+import { Code2, ArrowDown, Download } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -86,7 +86,7 @@ const Hero = () => {
           with a focus on creating seamless user experiences and robust backend systems.
         </p>
         
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '3rem' }}>
+        <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '3rem' }}>
           <a href="#projects" style={{
             background: 'var(--accent-primary)',
             color: '#000',
@@ -109,6 +109,21 @@ const Hero = () => {
             transition: 'all 0.3s'
           }} className="hover-bg-light">
             Get In Touch
+          </a>
+          <a href="/resume.pdf" download style={{
+            background: 'transparent',
+            color: 'var(--accent-primary)',
+            border: '1px solid var(--accent-primary)',
+            padding: '0.8rem 2rem',
+            borderRadius: '8px',
+            fontWeight: '500',
+            fontSize: '1rem',
+            transition: 'all 0.3s',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }} className="hover-accent">
+            <Download size={16} /> Resume
           </a>
         </div>
 
@@ -144,6 +159,11 @@ const Hero = () => {
       <style>{`
         .hover-opacity:hover { opacity: 0.9; }
         .hover-bg-light:hover { background: rgba(255,255,255,0.05); }
+        .hover-accent:hover { background: rgba(20,184,166,0.08) !important; }
+        @media (max-width: 600px) {
+          .hero-buttons { flex-direction: column; align-items: stretch; }
+          .hero-buttons a { text-align: center; justify-content: center; }
+        }
         .social-box {
           display: flex;
           align-items: center;

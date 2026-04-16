@@ -22,6 +22,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
@@ -30,6 +34,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,7 +57,12 @@ ul {
   list-style: none;
 }
 
-/* Utilities */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── Layout ────────────────────────────────── */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -63,34 +73,30 @@ ul {
   padding: 5rem 0;
 }
 
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+@media (max-width: 768px) {
+  .section { padding: 3.5rem 0; }
 }
 
-.section-title span {
-  color: var(--accent-primary);
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-
-/* Grid System */
+/* ─── Grid System ───────────────────────────── */
 .grid {
   display: grid;
   gap: 2rem;
 }
 
-.grid-cols-2 { grid-template-columns: repeat(1, 1fr); }
-@media (min-width: 768px) {
+/* Mobile-first: single column by default */
+.grid-cols-2 { grid-template-columns: 1fr; }
+.grid-cols-3 { grid-template-columns: 1fr; }
+
+@media (min-width: 640px) {
+  .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
   .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
   .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Animations & Effects */
+/* ─── Card Components ───────────────────────── */
 .glass-panel {
   background: rgba(24, 24, 27, 0.7);
   backdrop-filter: blur(10px);
@@ -107,6 +113,7 @@ ul {
   transform: translateY(-2px);
 }
 
+/* ─── Buttons ────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -118,6 +125,7 @@ ul {
   transition: all 0.3s ease;
   font-family: var(--font-mono);
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -140,6 +148,7 @@ ul {
   background-color: var(--accent-glow);
 }
 
+/* ─── Badge ──────────────────────────────────── */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -151,4 +160,41 @@ ul {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
+}
+
+/* ─── Section Title ──────────────────────────── */
+.section-title {
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-title span {
+  color: var(--accent-primary);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* ─── Scrollbar ───────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ─── Mobile Helpers ──────────────────────────── */
+@media (max-width: 600px) {
+  .container { padding: 0 1rem; }
+  h2 { font-size: clamp(1.6rem, 6vw, 2.2rem) !important; }
 }

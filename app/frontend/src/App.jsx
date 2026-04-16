@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -14,6 +15,17 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="app-container">
+      <Toaster 
+        position="bottom-right" 
+        toastOptions={{
+          style: {
+            background: 'rgba(24, 24, 27, 0.9)',
+            color: '#fff',
+            border: '1px solid rgba(20, 184, 166, 0.3)',
+            backdropFilter: 'blur(10px)',
+          },
+        }}
+      />
       <Header />
       <main>
         <Hero />

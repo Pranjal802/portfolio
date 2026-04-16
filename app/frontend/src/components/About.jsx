@@ -82,7 +82,7 @@ const About = () => {
         </h2>
       </div>
       
-      <div className="grid grid-cols-2" style={{ alignItems: 'start', gap: '4rem' }}>
+      <div className="grid grid-cols-2 about-grid" style={{ alignItems: 'start' }}>
         <div style={{ color: 'var(--text-muted)', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', lineHeight: 1.7 }}>
           <p>
             I'm a passionate <span className="highlight">MERN Stack Developer</span> currently pursuing my B.E. in Information Technology at G H Patel College of Engineering & Technology. With hands-on experience from internships at leading companies, I specialize in building responsive, dynamic, and user-friendly web applications.
@@ -131,6 +131,10 @@ const About = () => {
           color: var(--accent-primary);
           font-weight: 500;
         }
+        .about-grid { gap: 3rem; }
+        @media (min-width: 900px) {
+          .about-grid { gap: 4rem; }
+        }
         .stats-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
@@ -146,9 +150,6 @@ const About = () => {
         .stat-card:hover {
           border-color: rgba(20, 184, 166, 0.2);
           background: rgba(24, 24, 27, 1);
-        }
-        @media (max-width: 768px) {
-          .stats-grid { gap: 1rem; grid-template-columns: repeat(2, 1fr); }
         }
       `}</style>
     </motion.section>

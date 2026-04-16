@@ -178,6 +178,10 @@ const Achievements = () => {
           font-family: var(--font-mono);
           margin-top: 0.5rem;
         }
+        @media (max-width: 640px) {
+          .ach-card { padding: 1.25rem; }
+          .ach-col-header h3 { font-size: 1.1rem; }
+        }
       `}</style>
     </motion.section>
   );

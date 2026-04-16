@@ -60,29 +60,56 @@ export const MY_DATA = {
   projects: [
     {
       id: 1,
-      title: "PranHire \u2013 The Hiring WebApp",
+      title: "PranHire – The Hiring WebApp",
       date: "April 2025",
-      description: "Fullstack app PranHire, an AI-powered resume analysis and job tracking platform using the MERN stack. Integrated Cloudinary for secure file uploads and Gemini API for intelligent resume parsing and insights.",
+      status: "Live",
+      category: "Full Stack",
+      description: "An AI-powered hiring platform that streamlines the recruitment process for both job seekers and recruiters. Built with the MERN stack, it features intelligent resume parsing using the Gemini API to extract skills and match candidates with job listings automatically.",
+      highlights: [
+        "AI-powered resume parsing using Google Gemini API for intelligent skill extraction",
+        "Cloudinary integration for secure, optimized file uploads and management",
+        "JWT-based authentication with role-based access for candidates and recruiters",
+        "Real-time job application tracking dashboard with status updates",
+        "Responsive UI built with React.js and Tailwind CSS"
+      ],
       techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Cloudinary", "Gemini API"],
-      repoLink: "https://github.com",
+      repoLink: "https://github.com/Pranjal802",
       demoLink: "#"
     },
     {
       id: 2,
       title: "Freelancing Platform",
       date: "August 2024",
-      description: "Developed a full-featured freelancing platform for smooth client-freelancer collaboration, bidding, and secure payments. Integrated user authentication using Email/Password and Google OAuth.",
+      status: "Completed",
+      category: "Full Stack",
+      description: "A comprehensive full-stack freelancing marketplace connecting clients with skilled freelancers. Features a complete bidding system, project management tools, and secure OAuth authentication — built to mirror platforms like Fiverr and Upwork.",
+      highlights: [
+        "End-to-end bidding system where freelancers can propose and negotiate project prices",
+        "Google OAuth and Email/Password authentication via Passport.js",
+        "Project management dashboard with milestones and progress tracking",
+        "Freelancer profile pages with ratings, reviews, and portfolio showcase",
+        "Advanced search and filter system by skills, budget, and availability"
+      ],
       techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-      repoLink: "https://github.com",
+      repoLink: "https://github.com/Pranjal802",
       demoLink: "#"
     },
     {
       id: 3,
       title: "BlogApp",
       date: "May 2024",
-      description: "Created blog application with secure authentication and rich text editing using TinyMCE. Used Appwrite as third-party backend service.",
+      status: "Completed",
+      category: "Frontend",
+      description: "A feature-rich blogging platform with a rich-text editor, secure user authentication, and a clean reading experience. Leverages Appwrite as a backend-as-a-service for rapid development without managing server infrastructure.",
+      highlights: [
+        "TinyMCE rich text editor for creating beautifully formatted blog posts",
+        "Appwrite BaaS for database, authentication, and file storage",
+        "User profiles with personalized blog feeds and draft management",
+        "Redux Toolkit for efficient global state management",
+        "Responsive card-based layout with category filtering"
+      ],
       techStack: ["React.js", "Tailwind CSS", "TinyMCE", "Appwrite"],
-      repoLink: "https://github.com",
+      repoLink: "https://github.com/Pranjal802",
       demoLink: "#"
     }
   ],
